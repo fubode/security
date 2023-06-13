@@ -1,5 +1,6 @@
 package com.fubode.NSIS.security;
 
+import com.fubode.NSIS.model.SecUsuarios;
 import com.fubode.NSIS.model.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +13,7 @@ import java.util.Collections;
 @AllArgsConstructor
 public class UserDetailmpl implements UserDetails {
 
-    private final Usuario usuario;
+    private final SecUsuarios usuario;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.emptyList();
@@ -25,7 +26,7 @@ public class UserDetailmpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return usuario.getEmail();
+        return usuario.getUsuario();
     }
 
     @Override
@@ -49,6 +50,8 @@ public class UserDetailmpl implements UserDetails {
     }
 
     public String getNombre(){
-        return usuario.getNombre();
+        return usuario.getCodUsuario();
     }
+    public Integer getIdPersona(){ return usuario.getIdPersona();}
+    public Integer getIdUsuario(){ return usuario.getIdUsuario();}
 }

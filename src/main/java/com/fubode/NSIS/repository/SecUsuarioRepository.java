@@ -3,11 +3,9 @@ package com.fubode.NSIS.repository;
 import com.fubode.NSIS.model.SecUsuarios;
 import com.fubode.NSIS.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
-public interface UsuarioRepository extends JpaRepository<Usuario,Integer> {
-    Optional<Usuario> findOneByEmail(String email);
+public interface SecUsuarioRepository extends JpaRepository<SecUsuarios,Integer> {
+    Optional<SecUsuarios> findOneByUsuario(String usuario);
 }
