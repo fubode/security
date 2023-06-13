@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@Table(name = "contacto")
 public class Contacto {
 
     @Id
@@ -17,5 +18,5 @@ public class Contacto {
     @Column(name = "fechanac")
     private LocalDate fechaNacimiento;
     private String celular;
-    private String email;
+    private String email ;
 }
